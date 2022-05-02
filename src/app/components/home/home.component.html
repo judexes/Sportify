@@ -1,0 +1,79 @@
+<app-navbar></app-navbar>
+
+<section class="search py-5 text-center container">
+	<div class="row py-lg-5">
+		<div class="col-md-10 mx-auto">
+			<h1 class="fw-light mb-5">Music Search</h1>
+			<!-- Search form -->
+			<div class="form-row">
+				<div class="form-group col mx-auto">
+					<div class="input-group mb-3">
+						<input class="form-control border-bottom border-0" type="text" placeholder="Search..." style="text-align:center" [(ngModel)]="searchQuery" name="search">
+					</div>
+				</div>
+			</div>
+			<div class="search-results mt-5">
+				<p class="lead">{{ searchQuery }}</p>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="container px-4 py-5 popular" id="custom-cards">
+	<h2 class="pb-2 border-bottom">Pupular</h2>
+	<div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+		<div class="col">
+			<div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg">
+				<div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+					<h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Ella Fitzgerald</h2>
+					<ul class="d-flex list-unstyled mt-auto">
+						<li class="d-flex align-items-center me-3">
+							<small>Followers: 23,195,324</small>
+						</li>
+						<li class="d-flex align-items-center">
+							<small>Genre: <span class="badge badge-secondary">Pop</span> <span class="badge badge-secondary">Soul</span></small>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="col">
+			<div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg"
+				style="background-image: url('unsplash-photo-2.jpg');">
+				<div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+					<h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">BLack Sheriff</h2>
+					<ul class="d-flex list-unstyled mt-auto">
+						<li class="d-flex align-items-center me-3">
+							<small>Followers: 12,332,133</small>
+						</li>
+						<li class="d-flex align-items-center">
+							<small>Genre: <span class="badge badge-secondary">Melodic Rap</span> <span
+									class="badge badge-secondary">RnB</span></small>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="col">
+			<div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg"
+				style="background-image: url('unsplash-photo-3.jpg');">
+				<div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
+					<h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">BNXN fka BUJU</h2>
+					<ul class="d-flex list-unstyled mt-auto">
+						<li class="d-flex align-items-center me-3">
+							<small>Followers: 12,332,133</small>
+						</li>
+						<li class="d-flex align-items-center">
+							<small>Genre: <span class="badge badge-secondary">Pop</span> <span
+									class="badge badge-secondary">Soul</span></small>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<app-footer></app-footer>
