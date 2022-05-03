@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from "@angular/forms";
+import { HttpClientModule } from "@angular/common/http";
 
 import { AppComponent } from './app.component';
 
@@ -27,6 +28,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { FooterComponent } from './components/footer/footer.component';
 import { AboutComponent } from './components/about/about.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+
+import { SportifyService } from "./services/sportify.service";
+
+
 
 @NgModule({
   declarations: [
@@ -56,8 +61,9 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     MdbTooltipModule,
     MdbValidationModule,
     AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [SportifyService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

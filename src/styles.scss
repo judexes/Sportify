@@ -15,4 +15,11 @@ body {
     font-family: 'Poppins', sans-serif;
     // font-family: 'Quicksand', sans-serif;
     // font-family: 'Raleway', sans-serif;
+
+    .input-group > .form-control:focus {
+        border-color: #ffffff00;
+        box-shadow: none;
+        /* background-color: black; */
+    }
+
 }
