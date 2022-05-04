@@ -8,12 +8,14 @@ import { SportifyService } from 'src/app/services/sportify.service';
 })
 export class HomeComponent implements OnInit {
 
+  isLoading: boolean;
   public searchQuery: string = null;
   public artists;
+  public artistsGenres: string = null;
   // public tracks = [];
 
   constructor(
-    private _sportifyService:SportifyService
+    private _sportifyService: SportifyService
   ) { }
 
   ngOnInit(): void {
@@ -21,13 +23,13 @@ export class HomeComponent implements OnInit {
 
   // Searcg artist
   public searchArtist() {
-    this._sportifyService.getAllArtist(this.searchQuery).subscribe((data)=>{
+    this._sportifyService.getAllArtist(this.searchQuery).subscribe((data) => {
 
-      // this.artists = [data.artists.items];
+      this.artists = data.artists.items;
 
-      this.artists = String(data.artists.items);
+      console.log((this.searchQuery).length);
 
-      console.log(data.artists.items[0].name);
+
     })
   }
 

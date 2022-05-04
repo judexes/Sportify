@@ -7,7 +7,9 @@ import { Observable } from 'rxjs';
 })
 export class SportifyService {
 
-  private authorizationKey = 'Bearer BQBnj-jGtNgjKkDZ8FPtJAPXbAI0GikNW1pxEw7WL-JXD_ExrMHnmE7avMSv-WGP7LD3iGQZaLRq0j6It13WPzEtrrL3Xl3dVRBNn0FmxCpwqRUUNU8vqhhzWhR-L4xwmIw1nt8WvAgxS6Bchy4NbnrQ1IH5Q6oS-XA';
+  // !      key expires after every hour requiring renewal at https://api.spotify.com/v1/search
+  // TODO   Refactor code to automate AuthorizationKey renewal [Sportify Authorization Code Flow]
+  private authorizationKey = 'Bearer BQAEBTWVsvuDmS2gj6D9shkkryUvTWKm7MWkJqgcO8Kh1izCYtakIr3ccve1lGDYDrHDa2RASflWfTdH3HTOilvVGzZv6HVlW33KpwsnRui7qeQwi3ijIYSw7QbZvNlCDFeEqeFsNUqs5kPGBNODqlZtPoniD1q6vc0';
 
   private httpOptions = {
     headers : new HttpHeaders({
@@ -21,21 +23,11 @@ export class SportifyService {
 
   // Get all Artist
   public getAllArtist(searchQuery):Observable<any>{
-    const endPoint = `https://api.spotify.com/v1/search?q=${searchQuery}&type=artist`;
+
+    //  * Refactor code to include filter from user
+    const endPoint = `https://api.spotify.com/v1/search?q=${searchQuery}&type=artist&limit=6`;
 
     return this._httpClient.get<any>(endPoint, this.httpOptions);
-  }
-
-  // Get all Tracks
-  // public getAllTrack(searchQuery):Observable<any>{
-  //   const endPoint = `https://api.spotify.com/v1/search?q=${searchQuery}&type=track`;
-
-  //   return this._httpClient.get<any>(endPoint, this.httpOptions);
-  // }
-
-  // Get all Album
-  public getAllAlbum(searchQuery){
-    let albumUrl = `https://api.spotify.com/v1/search?q=${searchQuery}&type=album`;
   }
 
 }
