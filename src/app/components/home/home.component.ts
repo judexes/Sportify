@@ -8,11 +8,8 @@ import { SportifyService } from 'src/app/services/sportify.service';
 })
 export class HomeComponent implements OnInit {
 
-  isLoading: boolean;
   public searchQuery: string = null;
   public artists;
-  public artistsGenres: string = null;
-  // public tracks = [];
 
   constructor(
     private _sportifyService: SportifyService
@@ -27,17 +24,7 @@ export class HomeComponent implements OnInit {
 
       this.artists = data.artists.items;
 
-      console.log((this.searchQuery).length);
-
-
     })
   }
-
-  // Searcg track
-  // public searchTrack() {
-  //   this._sportifyService.getAllTrack(this.searchQuery).subscribe((data)=>{
-  //     this.tracks = data.tracks.items;
-  //   })
-  // }
 
 }

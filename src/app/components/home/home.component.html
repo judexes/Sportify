@@ -10,39 +10,36 @@
 			<div class="form-row">
 				<div class="form-group col mx-auto">
 					<div class="input-group mb-3">
-						<input class="form-control border-bottom border-0" (keyup)="searchArtist()" type="text" placeholder="Search..." style="text-align:center" [(ngModel)]="searchQuery" name="search" autofocus>
+						<input class="form-control border-bottom border-0" (keyup)="searchArtist()" type="text"
+							placeholder="Search artist..." style="text-align:center" [(ngModel)]="searchQuery" name="search"
+							autofocus>
 					</div>
 				</div>
 			</div>
-			<!-- <div class="search-results mt-5">
-				<pre>{{ artists.id }}</pre>
-			</div> -->
 		</div>
 	</div>
 </section>
 
 <!-- SEARCH RESULT SECTION-->
 <!-- check if search query length is greater than 0 -->
-<section class="container px-4 py-5 popular" id="custom-cards"  *ngIf="searchQuery.length>0"> 
+<section class="container px-4 py-5 popular" id="custom-cards" *ngIf="searchQuery.length>0">
 	<h2 class="pb-2 border-bottom">{{ artists.length }} results found for "{{ searchQuery }}"</h2>
 	<div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
-		<ng-container *ngFor="let artist of artists; let i = index" >
+		<ng-container *ngFor="let artist of artists; let i = index">
 			<div class="col">
-				<div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg" style="background-image: url('{{ artists[i].images[0].url }}');">
+				<div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg"
+					style="background-image: url('{{ artists[i].images[0].url }}');">
 					<div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
-						<a [routerLink]="[ '{{ artist.id }}']">
+						<a [routerLink]="['/artists/',artist.id]">
 							<h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold text-white">{{ artist.name }}</h2>
 						</a>
-						<small>
-							<p class="text-white">ID: {{ artist.id }}</p>
-						</small>
 						<ul class="d-flex list-unstyled mt-auto">
 							<li class="d-flex align-items-center me-3">
 								<small>Followers: {{ artist.followers.total | number }}</small>
 							</li>
 							<li class="d-flex align-items-center">
-								<small>Genre: 
-									<ng-container  *ngFor="let genre of artists[i].genres; let i = index" >
+								<small>Genre:
+									<ng-container *ngFor="let genre of artists[i].genres; let i = index">
 										<span class="badge badge-secondary">{{ genre }}</span>
 									</ng-container>
 								</small>
@@ -57,7 +54,7 @@
 
 
 <!-- PUPULAR SEARCH SECTION-->
-<section class="container px-4 py-5 popular" id="custom-cards" >
+<section class="container px-4 py-5 popular" id="custom-cards">
 	<h2 class="pb-2 border-bottom">Pupular</h2>
 	<div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
 

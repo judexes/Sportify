@@ -1,0 +1,102 @@
+<app-navbar></app-navbar>
+
+
+<!-- ARTIST HERO SECTION-->
+<section class=" py-5 container">
+    <div class="row hero p-4 m-2 rounded-3 shadow-lg">
+        <div class="col-sm-4 p-3 ">
+            <img src="{{ artist.images[1].url }}" alt="Image" class="img-responsive img-thumbnail">
+        </div>
+        <div class="col-sm-8 artistInfo">
+            <h2 class="pt-sm-5 mt-sm-5 display-6 fw-bold">{{ artist.name }}</h2>
+            <small>
+                <p>Genre:
+                    <ng-container *ngFor="let genre of artist.genres; let i = index">
+                        <span class="badge badge-secondary m-1">{{ genre }}</span>
+                    </ng-container>
+                </p>
+                <p> Followers: {{ artist.followers.total | number }}</p>
+            </small>
+
+        </div>
+    </div>
+</section>
+
+<!-- <pre>
+    {{ albums[0].name }}
+</pre> -->
+
+<!-- ARTIST'S ALBUMS SECTION-->
+<section class="container px-4 py-5 artistAlbums" id="custom-cards">
+    <h2 class="pb-2 border-bottom">{{ artist.name }} Albums</h2>
+    <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-3">
+        <ng-container *ngFor="let album of albums; let i = index">
+            
+            <div class="col">
+                <div class="card bg-dark text-white">
+                    <img src="{{ album.images[0].url }}" class="card-img img-responsive" alt="..." style="background-repeat: no-repeat;
+                    background-size: auto;">
+                    <div class="card-img-overlay p-0 pt-5 mt-5">
+                        <div class="m-3 p-3 card-overlay-text">
+                            <h5 class="card-title">{{ album.name }}</h5>
+                            <ul class="d-flex list-unstyled mt-auto">
+                                <small>
+                                    <li class="d-flex align-items-center me-3">Release date: {{ album.release_date }}</li>
+                                    <li class="d-flex align-items-center me-3">Tracks: {{ album.total_tracks }}</li>
+                                    <li class="d-flex align-items-center me-3">Type: {{ album.type }}</li>
+                                    <!-- <li class="d-flex align-items-center me-3">Release date: {{ album.id }}</li> -->
+                                </small>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+
+</section>
+
+<!-- PUPULAR SEARCH SECTION-->
+<section class="container px-4 py-5 popular" id="custom-cards">
+    <h2 class="pb-2 border-bottom">Pupular</h2>
+    <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+
+        <div class="col">
+            <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg"
+                style="background-image: url('unsplash-photo-2.jpg');">
+                <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                    <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">BLack Sheriff</h2>
+                    <ul class="d-flex list-unstyled mt-auto">
+                        <li class="d-flex align-items-center me-3">
+                            <small>Followers: 12,332,133</small>
+                        </li>
+                        <li class="d-flex align-items-center">
+                            <small>Genre: <span class="badge badge-secondary">Melodic Rap</span> <span
+                                    class="badge badge-secondary">RnB</span></small>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg"
+                style="background-image: url('unsplash-photo-3.jpg');">
+                <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
+                    <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">BNXN fka BUJU</h2>
+                    <ul class="d-flex list-unstyled mt-auto">
+                        <li class="d-flex align-items-center me-3">
+                            <small>Followers: 12,332,133</small>
+                        </li>
+                        <li class="d-flex align-items-center">
+                            <small>Genre: <span class="badge badge-secondary">Pop</span> <span
+                                    class="badge badge-secondary">Soul</span></small>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<app-footer></app-footer>

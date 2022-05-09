@@ -1,0 +1,30 @@
+section {
+    .hero {
+        background: rgb(131,58,180) !important;
+        background: linear-gradient(99deg, rgba(131,58,180,1) 2%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%) !important; 
+        .artistInfo {
+            color: white;
+            text-shadow: 0 0 30px rgb(0 0 0 / 90%),
+                0 0 30px rgb(0 0 0 / 90%),
+                0 0 30px rgb(0 0 0 / 90%);
+        }
+    }
+
+    .card   {
+        text-shadow: 0 0 30px rgb(0 0 0 / 90%),
+        0 0 30px rgb(0 0 0 / 90%),
+        0 0 30px rgb(0 0 0 / 90%);
+
+        .card-overlay-text {
+            background: rgb(2,0,36);
+            background: linear-gradient(90deg, #000000 0%, #06060691 35%, #000000 100%);
+        }
+    }
+
+}
+
+.hero {
+    background: rgb(131,58,180);
+    background: linear-gradient(99deg, rgba(131,58,180,1) 2%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%); 
+    
+}

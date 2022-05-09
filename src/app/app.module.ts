@@ -32,6 +32,7 @@ import { AboutComponent } from './components/about/about.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 
 import { SportifyService } from "./services/sportify.service";
+import { ArtistComponent } from './components/artist/artist.component';
 
 
 
@@ -41,7 +42,8 @@ import { SportifyService } from "./services/sportify.service";
     HomeComponent,
     FooterComponent,
     AboutComponent,
-    NavbarComponent
+    NavbarComponent,
+    ArtistComponent
   ],
   imports: [
     FormsModule,
