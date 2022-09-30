@@ -1,2 +1,1 @@
-# heroes
- 
+Angular app
