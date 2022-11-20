@@ -8,36 +8,38 @@ import { Observable } from 'rxjs';
 export class SportifyService {
 
   // !      key expires after every hour requiring renewal at https://api.spotify.com/v1/search
+  // !      Select scope while generating the bearer token
   // TODO   Refactor code to automate AuthorizationKey renewal [Sportify Authorization Code Flow]
-  private authorizationKey = 'Bearer BQAARKlNO4mPu3VHhG_KJQoHmvOXXyNPxtC7IrI2EHC0i41jvJkmWOo01wk_HoZRwNtYZgCUNM1I7biP83r-XoFJZYohQVaHWW13X7HhNkYxhNQlg-ZalJIPCZVOf_QAf2LMlfd4Vg_f-ra77YKQJ6k9B83clMNKnRU';
-
+  //    https://developer.spotify.com/console/get-search-item/
+  authorizationKey = 'Bearer BQBf-nIko8zP5PR9C10szjtIoTcZQmAyI0-ks3YjN_rDHv8jkmfN1Q0s-tWn5gVI_TvZx3QcaWAWe6ZAdzUVFT2R-DcrRZCxeRLzi4flBjCGAbqnOteNaJ6jwTT1oiYHVkX9o0Cr5xQFqonKZQd5SW2lbtQckgZNupQkiWaVIEBUOPRQVDwG4KK9ugVFwyhteCM';
+  
   private httpOptions = {
-    headers : new HttpHeaders({
-      'Accept' : 'application/json',
-      'Content-Type' : 'application/json',
-      'Authorization' : this.authorizationKey
+    headers: new HttpHeaders({
+      'Accept': 'application/json',
+      'Content-Type': 'application/json',
+      'Authorization': this.authorizationKey
     })
   };
 
   constructor(private _httpClient: HttpClient) { }
 
   // Get all Artist
-  public getAllArtist(searchQuery):Observable<any>{
+  public getAllArtist(searchQuery): Observable<any> {
     //  * Refactor code to include filter from user
     let endPoint = `https://api.spotify.com/v1/search?q=${searchQuery}&type=artist&limit=6`;
     return this._httpClient.get<any>(endPoint, this.httpOptions);
   }
 
   // Get Artist details
-  public getArtist(artistId):Observable<any>{
+  public getArtist(artistId): Observable<any> {
     let endPoint = `https://api.spotify.com/v1/artists/${artistId}`;
     return this._httpClient.get<any>(endPoint, this.httpOptions)
   }
 
   // Get artist albums
-  public getArtistAlbums(artistId):Observable<any>{
+  public getArtistAlbums(artistId): Observable<any> {
     let endPoint = `	https://api.spotify.com/v1/artists/${artistId}/albums`;
     return this._httpClient.get<any>(endPoint, this.httpOptions)
   }
-
+ 
 }
