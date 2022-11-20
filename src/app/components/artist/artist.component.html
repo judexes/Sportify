@@ -29,10 +29,12 @@
 <!-- ARTIST'S ALBUMS SECTION-->
 <section class="container px-4 py-5 artistAlbums" id="custom-cards">
     <h2 class="pb-2 border-bottom">{{ artist.name }} Albums</h2>
-    <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-3">
+
+    <div class="row">
+    
         <ng-container *ngFor="let album of albums; let i = index">
             
-            <div class="col">
+            <div class="col-6 col-sm-4 mb-4">
                 <div class="card bg-dark text-white">
                     <img src="{{ album.images[0].url }}" class="card-img img-responsive" alt="..." style="background-repeat: no-repeat;
                     background-size: auto;">
@@ -43,7 +45,7 @@
                                 <small>
                                     <li class="d-flex align-items-center me-3">Release date: {{ album.release_date }}</li>
                                     <li class="d-flex align-items-center me-3">Tracks: {{ album.total_tracks }}</li>
-                                    <li class="d-flex align-items-center me-3">Type: {{ album.type }}</li>
+                                    <li class="d-flex align-items-center me-3">Type: {{ album.album_type }}</li>
                                     <!-- <li class="d-flex align-items-center me-3">Release date: {{ album.id }}</li> -->
                                 </small>
                             </ul>
@@ -52,6 +54,7 @@
                 </div>
             </div>
         </ng-container>
+
     </div>
 
 </section>

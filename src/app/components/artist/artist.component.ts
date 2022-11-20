@@ -39,7 +39,6 @@ export class ArtistComponent implements OnInit {
 
   // public getArtistDetails() {
   //   this._sportifyService.getArtist(this.artistId).subscribe((data) => {
-
   //     this.artist = data;
   //   })
   // }

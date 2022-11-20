@@ -10,10 +10,23 @@ section {
         }
     }
 
+
+
     .card   {
         text-shadow: 0 0 30px rgb(0 0 0 / 90%),
         0 0 30px rgb(0 0 0 / 90%),
         0 0 30px rgb(0 0 0 / 90%);
+        font-size: 12px;
+
+        .card-title {
+            font-size: 15px;
+            font-weight: 600;
+            display: block;
+            width: 230px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;  
+        }
 
         .card-overlay-text {
             background: rgb(2,0,36);
